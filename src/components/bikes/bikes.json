@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_bikes_bikes",
+  "info": {
+    "displayName": "bikes"
+  },
+  "options": {},
+  "attributes": {
+    "size": {
+      "type": "string"
+    },
+    "material": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

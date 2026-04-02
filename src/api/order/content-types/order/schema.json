@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "products": {
+      "type": "json"
+    },
+    "status_order": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "paid",
+        "cancelled"
+      ]
+    },
+    "order_number": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "delivery_method": {
+      "type": "string"
+    },
+    "delivery_address": {
+      "type": "string"
+    },
+    "ttn": {
+      "type": "string"
+    }
+  }
+}

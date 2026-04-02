@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_frames_frames",
+  "info": {
+    "displayName": "Frames"
+  },
+  "options": {},
+  "attributes": {
+    "size": {
+      "type": "string"
+    },
+    "material": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -3,7 +3,7 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface BikesBikes extends Struct.ComponentSchema {
   collectionName: 'components_bikes_bikes';
   info: {
-    displayName: 'bikes';
+    displayName: 'Bikes';
   };
   attributes: {
     material: Schema.Attribute.String;

@@ -1,10 +1,34 @@
+// import type { Core } from '@strapi/strapi';
+
+// const config: Core.Config.Middlewares = [
+//   'strapi::logger',
+//   'strapi::errors',
+//   'strapi::security',
+//   'strapi::cors',
+//   'strapi::poweredBy',
+//   'strapi::query',
+//   'strapi::body',
+//   'strapi::session',
+//   'strapi::favicon',
+//   'strapi::public',
+// ];
+
+// export default config;
+
 import type { Core } from '@strapi/strapi';
 
 const config: Core.Config.Middlewares = [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['https://just-ang.github.io'],
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+      headers: '*',
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',

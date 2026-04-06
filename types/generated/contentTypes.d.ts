@@ -544,14 +544,13 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Bikes: Schema.Attribute.Component<'bikes.bikes', true>;
+    another: Schema.Attribute.Component<'product-specs.attribute', true>;
     brand: Schema.Attribute.String;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    frames: Schema.Attribute.Component<'frames.frames', true>;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -566,10 +565,12 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     price: Schema.Attribute.BigInteger;
     publishedAt: Schema.Attribute.DateTime;
     stock: Schema.Attribute.Integer;
+    type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     weight: Schema.Attribute.String;
+    wheel_size: Schema.Attribute.String;
   };
 }
 

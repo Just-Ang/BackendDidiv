@@ -24,6 +24,11 @@
     "name": {
       "type": "string"
     },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
     "price": {
       "type": "biginteger"
     },
@@ -33,26 +38,22 @@
     "brand": {
       "type": "string"
     },
-    "weight": {
-      "type": "string"
-    },
     "stock": {
       "type": "integer"
     },
-    "frames": {
+    "another": {
       "type": "component",
-      "component": "frames.frames",
+      "component": "product-specs.attribute",
       "repeatable": true
     },
-    "category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::category.category"
+    "weight": {
+      "type": "string"
     },
-    "Bikes": {
-      "type": "component",
-      "component": "bikes.bikes",
-      "repeatable": true
+    "type": {
+      "type": "string"
+    },
+    "wheel_size": {
+      "type": "string"
     }
   }
 }

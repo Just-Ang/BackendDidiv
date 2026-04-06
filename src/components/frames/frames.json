@@ -5,9 +5,6 @@
   },
   "options": {},
   "attributes": {
-    "size": {
-      "type": "string"
-    },
     "material": {
       "type": "string"
     }

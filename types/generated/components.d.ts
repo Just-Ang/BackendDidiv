@@ -19,7 +19,17 @@ export interface FramesFrames extends Struct.ComponentSchema {
   };
   attributes: {
     material: Schema.Attribute.String;
-    size: Schema.Attribute.String;
+  };
+}
+
+export interface ProductSpecsAttribute extends Struct.ComponentSchema {
+  collectionName: 'components_product_specs_attributes';
+  info: {
+    displayName: 'attribute';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
   };
 }
 
@@ -28,6 +38,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'bikes.bikes': BikesBikes;
       'frames.frames': FramesFrames;
+      'product-specs.attribute': ProductSpecsAttribute;
     }
   }
 }

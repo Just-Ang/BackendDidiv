@@ -15,12 +15,52 @@
 
 // export default config;
 
+// import type { Core } from '@strapi/strapi';
+
+// const config: Core.Config.Middlewares = [
+//   'strapi::logger',
+//   'strapi::errors',
+//   'strapi::security',
+//   {
+//     name: 'strapi::cors',
+//     config: {
+//       origin: ['*'],
+//       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+//       headers: '*',
+//     },
+//   },
+//   'strapi::poweredBy',
+//   'strapi::query',
+//   'strapi::body',
+//   'strapi::session',
+//   'strapi::favicon',
+//   'strapi::public',
+// ];
+
+// export default config;
+
+
 import type { Core } from '@strapi/strapi';
 
 const config: Core.Config.Middlewares = [
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
+  // Розгортаємо security, щоб дозволити картинки з Cloudinary
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", 'https:'],
+          'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+          'media-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+          upgradeInsecureRequests: null,
+        },
+      },
+    },
+  },
+  // Твій налаштований CORS із зірочкою
   {
     name: 'strapi::cors',
     config: {

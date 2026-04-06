@@ -4,6 +4,7 @@
 
 // export default config;
     
+
 import type { Core } from '@strapi/strapi';
 
 const config = ({ env }: Core.Config.Shared.ConfigParams): any => ({
@@ -18,6 +19,9 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): any => ({
       actionOptions: {
         upload: {},
         delete: {},
+      },
+      settings: {
+        default: {},
       },
     },
   },

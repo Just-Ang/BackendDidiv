@@ -524,7 +524,7 @@ export interface ApiFilterFilter extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     options: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
-    type: Schema.Attribute.Enumeration<['checkox', 'range']>;
+    type: Schema.Attribute.Enumeration<['checkbox', 'range']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

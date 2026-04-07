@@ -14,7 +14,7 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "checkox",
+        "checkbox",
         "range"
       ]
     },

@@ -497,6 +497,40 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFilterFilter extends Struct.CollectionTypeSchema {
+  collectionName: 'filters';
+  info: {
+    displayName: 'Filter';
+    pluralName: 'filters';
+    singularName: 'filter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    label: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::filter.filter'
+    > &
+      Schema.Attribute.Private;
+    max: Schema.Attribute.BigInteger;
+    min: Schema.Attribute.BigInteger;
+    name: Schema.Attribute.String;
+    options: Schema.Attribute.JSON;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.Enumeration<['checkox', 'range']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   collectionName: 'orders';
   info: {
@@ -1125,6 +1159,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::category.category': ApiCategoryCategory;
+      'api::filter.filter': ApiFilterFilter;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
       'plugin::content-releases.release': PluginContentReleasesRelease;

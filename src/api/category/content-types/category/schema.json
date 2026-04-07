@@ -26,6 +26,11 @@
         "videos",
         "audios"
       ]
+    },
+    "filters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::filter.filter"
     }
   }
 }

@@ -481,6 +481,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    filters: Schema.Attribute.Relation<'oneToMany', 'api::filter.filter'>;
     id_title: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -508,7 +509,6 @@ export interface ApiFilterFilter extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

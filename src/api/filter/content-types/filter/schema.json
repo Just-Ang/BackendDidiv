@@ -32,11 +32,6 @@
     },
     "max": {
       "type": "biginteger"
-    },
-    "category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::category.category"
     }
   }
 }

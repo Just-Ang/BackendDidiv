@@ -35,25 +35,13 @@
     "description": {
       "type": "text"
     },
-    "brand": {
-      "type": "string"
-    },
     "stock": {
       "type": "integer"
     },
-    "another": {
+    "attributes": {
       "type": "component",
       "component": "product-specs.attribute",
       "repeatable": true
-    },
-    "weight": {
-      "type": "string"
-    },
-    "type": {
-      "type": "string"
-    },
-    "wheel_size": {
-      "type": "string"
     }
   }
 }

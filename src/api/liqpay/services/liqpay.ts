@@ -23,5 +23,12 @@ export const createPayment = (orderId: string, amount: number) => {
   const signature = CryptoJS.SHA1(privateKey + data + privateKey)
     .toString(CryptoJS.enc.Base64);
 
+
+    console.log({
+  orderId,
+  amount,
+  data,
+  signature
+});
   return { data, signature };
 };

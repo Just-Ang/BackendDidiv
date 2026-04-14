@@ -18,9 +18,25 @@ export default {
       Buffer.from(data, 'base64').toString('utf-8')
     );
 
-    if (decoded.status === 'success') {
-      // ✅ тут оновлюєш замовлення як оплачене
-    }
+   if (decoded.status === 'success') {
+  const orderNumber = decoded.order_id;
+
+  const orders = await strapi.entityService.findMany('api::order.order', {
+    filters: {
+      order_number: orderNumber,
+    },
+  });
+
+  const order = orders[0];
+
+  if (order) {
+    await strapi.entityService.update('api::order.order', order.id, {
+      data: {
+        status_order: 'paid',
+      },
+    });
+  }
+}
 
     return ctx.send('ok');
   },

@@ -45,6 +45,9 @@
     },
     "ttn": {
       "type": "string"
+    },
+    "payment_method": {
+      "type": "string"
     }
   }
 }

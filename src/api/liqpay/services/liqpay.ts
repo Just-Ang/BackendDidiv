@@ -5,7 +5,7 @@ import CryptoJS from 'crypto-js';
 const publicKey = process.env.LIQPAY_PUBLIC_KEY!;
 const privateKey = process.env.LIQPAY_PRIVATE_KEY!;
 
-export const createPayment = (orderId: string, amount: number) => {
+export const createPayment = (order_number: string, amount: number) => {
   const json = {
     public_key: publicKey,
     version: '3',
@@ -13,7 +13,7 @@ export const createPayment = (orderId: string, amount: number) => {
     amount: amount.toString(),
     currency: 'UAH',
     description: 'Оплата замовлення',
-    order_id: orderId,
+    order_id: order_number,
     result_url: 'https://just-ang.github.io/Didiv/order-confirmation',
    server_url: 'https://backenddidiv-production.up.railway.app/api/liqpay/callback'
   };
@@ -25,7 +25,7 @@ export const createPayment = (orderId: string, amount: number) => {
 
 
     console.log({
-  orderId,
+  order_number,
   amount,
   data,
   signature

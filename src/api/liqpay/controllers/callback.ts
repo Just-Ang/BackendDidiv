@@ -18,8 +18,8 @@ export default {
       Buffer.from(data, 'base64').toString('utf-8')
     );
 
-   if (decoded.status === 'success') {
-  const orderNumber = decoded.order_id;
+   if(decoded.status === 'success' || decoded.status === 'sandbox'){
+const orderNumber = String(decoded.order_id);
 
   const orders = await strapi.entityService.findMany('api::order.order', {
     filters: {
@@ -28,6 +28,7 @@ export default {
   });
 
   const order = orders[0];
+  console.log(order)
 
   if (order) {
     await strapi.entityService.update('api::order.order', order.id, {

@@ -1,4 +1,4 @@
-// /src/api/liqpay/services/liqpay.ts
+
 
 import CryptoJS from 'crypto-js';
 

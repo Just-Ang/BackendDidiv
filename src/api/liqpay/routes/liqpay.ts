@@ -10,7 +10,7 @@ export default {
     },
     {
       method: 'POST',
-      path: '/liqpay/handle', // Для отримання статусу (викликає LiqPay)
+      path: '/liqpay/callback', // Для отримання статусу (викликає LiqPay)
       handler: 'callback.handle', 
       config: {
         auth: false,

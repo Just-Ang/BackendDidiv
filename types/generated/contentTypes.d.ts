@@ -563,10 +563,42 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     price: Schema.Attribute.BigInteger;
     publishedAt: Schema.Attribute.DateTime;
+    questions: Schema.Attribute.Relation<'oneToMany', 'api::question.question'>;
     stock: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiQuestionQuestion extends Struct.CollectionTypeSchema {
+  collectionName: 'questions';
+  info: {
+    displayName: 'Question';
+    pluralName: 'questions';
+    singularName: 'question';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::question.question'
+    > &
+      Schema.Attribute.Private;
+    product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
+    publishedAt: Schema.Attribute.DateTime;
+    question: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    userName: Schema.Attribute.String;
   };
 }
 
@@ -1123,6 +1155,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
+      'api::question.question': ApiQuestionQuestion;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::export-import-kkm.export-import-config': PluginExportImportKkmExportImportConfig;

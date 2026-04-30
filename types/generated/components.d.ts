@@ -33,12 +33,24 @@ export interface ProductSpecsAttribute extends Struct.ComponentSchema {
   };
 }
 
+export interface ProductSpecsFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_product_specs_features';
+  info: {
+    displayName: 'features';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'bikes.bikes': BikesBikes;
       'frames.frames': FramesFrames;
       'product-specs.attribute': ProductSpecsAttribute;
+      'product-specs.features': ProductSpecsFeatures;
     }
   }
 }

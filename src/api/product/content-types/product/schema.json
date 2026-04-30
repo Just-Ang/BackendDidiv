@@ -32,22 +32,29 @@
     "price": {
       "type": "biginteger"
     },
+    "new_price": {
+      "type": "integer"
+    },
     "description": {
       "type": "text"
     },
     "stock": {
       "type": "integer"
     },
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question.question"
+    },
     "attributes": {
       "type": "component",
       "component": "product-specs.attribute",
       "repeatable": true
     },
-    "questions": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::question.question",
-      "mappedBy": "product"
+    "features": {
+      "type": "component",
+      "component": "product-specs.features",
+      "repeatable": true
     }
   }
 }

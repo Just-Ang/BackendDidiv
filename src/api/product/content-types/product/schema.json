@@ -41,11 +41,6 @@
     "stock": {
       "type": "integer"
     },
-    "questions": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::question.question"
-    },
     "attributes": {
       "type": "component",
       "component": "product-specs.attribute",
@@ -55,6 +50,15 @@
       "type": "component",
       "component": "product-specs.features",
       "repeatable": true
+    },
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question.question",
+      "mappedBy": "product"
+    },
+    "available": {
+      "type": "boolean"
     }
   }
 }

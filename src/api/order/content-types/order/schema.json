@@ -48,6 +48,11 @@
     },
     "payment_method": {
       "type": "string"
+    },
+    "order_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-item.order-item"
     }
   }
 }

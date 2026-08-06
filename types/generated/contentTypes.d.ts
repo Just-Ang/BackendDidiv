@@ -545,7 +545,7 @@ export interface ApiFavoriteFavorite extends Struct.CollectionTypeSchema {
       'api::favorite.favorite'
     > &
       Schema.Attribute.Private;
-    product: Schema.Attribute.Relation<'oneToOne', 'api::product.product'>;
+    product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -651,7 +651,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    favorite: Schema.Attribute.Relation<'oneToOne', 'api::favorite.favorite'>;
+    favorites: Schema.Attribute.Relation<'oneToMany', 'api::favorite.favorite'>;
     features: Schema.Attribute.Component<'product-specs.features', true>;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',

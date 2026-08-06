@@ -60,9 +60,9 @@
     "available": {
       "type": "boolean"
     },
-    "favorite": {
+    "favorites": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::favorite.favorite",
       "mappedBy": "product"
     },

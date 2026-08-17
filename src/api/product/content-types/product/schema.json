@@ -77,6 +77,10 @@
       "relation": "oneToOne",
       "target": "api::order-item.order-item",
       "mappedBy": "product"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }

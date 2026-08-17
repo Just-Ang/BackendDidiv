@@ -81,6 +81,9 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "sku": {
+      "type": "uid"
     }
   }
 }

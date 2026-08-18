@@ -487,12 +487,16 @@ export interface ApiCartItemCartItem extends Struct.CollectionTypeSchema {
       'api::cart-item.cart-item'
     > &
       Schema.Attribute.Private;
-    product: Schema.Attribute.Relation<'oneToOne', 'api::product.product'>;
+    product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
-    quantity: Schema.Attribute.Integer;
+    quantity: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -641,9 +645,9 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
   attributes: {
     attributes: Schema.Attribute.Component<'product-specs.attribute', true>;
-    available: Schema.Attribute.Boolean;
-    cart_item: Schema.Attribute.Relation<
-      'oneToOne',
+    available: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    cart_items: Schema.Attribute.Relation<
+      'oneToMany',
       'api::cart-item.cart-item'
     >;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;

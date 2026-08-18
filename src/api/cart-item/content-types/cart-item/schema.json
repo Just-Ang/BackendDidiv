@@ -13,12 +13,19 @@
   "attributes": {
     "product": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::product.product",
-      "inversedBy": "cart_item"
+      "inversedBy": "cart_items"
     },
     "quantity": {
-      "type": "integer"
+      "type": "integer",
+      "default": 1
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "cart_items"
     }
   }
 }

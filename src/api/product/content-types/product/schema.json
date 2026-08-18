@@ -58,7 +58,8 @@
       "mappedBy": "product"
     },
     "available": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "favorites": {
       "type": "relation",
@@ -66,9 +67,9 @@
       "target": "api::favorite.favorite",
       "mappedBy": "product"
     },
-    "cart_item": {
+    "cart_items": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::cart-item.cart-item",
       "mappedBy": "product"
     },

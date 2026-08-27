@@ -28,6 +28,7 @@
       "enum": [
         "pending",
         "paid",
+        "done",
         "cancelled"
       ]
     },
@@ -49,10 +50,15 @@
     "payment_method": {
       "type": "string"
     },
-    "order_items": {
+    "users_permissions_user": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order-item.order-item"
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
+    },
+    "no_call": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

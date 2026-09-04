@@ -679,6 +679,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     questions: Schema.Attribute.Relation<'oneToMany', 'api::question.question'>;
     sku: Schema.Attribute.UID;
     slug: Schema.Attribute.UID<'name'>;
+    sold_date: Schema.Attribute.DateTime;
     stock: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

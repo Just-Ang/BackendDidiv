@@ -607,6 +607,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    date: Schema.Attribute.DateTime;
     delivery_address: Schema.Attribute.String;
     delivery_method: Schema.Attribute.String;
     email: Schema.Attribute.Email;
@@ -621,7 +622,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     products: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
     status_order: Schema.Attribute.Enumeration<
-      ['pending', 'paid', 'done', 'cancelled']
+      ['pending', 'confirmed', 'paid', 'done', 'cancelled']
     >;
     ttn: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

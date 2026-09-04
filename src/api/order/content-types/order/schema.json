@@ -27,6 +27,7 @@
       "type": "enumeration",
       "enum": [
         "pending",
+        "confirmed",
         "paid",
         "done",
         "cancelled"
@@ -59,6 +60,9 @@
     "no_call": {
       "type": "boolean",
       "default": false
+    },
+    "date": {
+      "type": "datetime"
     }
   }
 }

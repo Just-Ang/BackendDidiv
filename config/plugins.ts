@@ -49,23 +49,24 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): any => ({
     },
   },
 
-  email: {
-    config: {
-      provider: 'nodemailer',
-      providerOptions: {
-        host: env('SMTP_HOST'),
-        port: env.int('SMTP_PORT', 587),
-        auth: {
-          user: env('SMTP_USERNAME'),
-          pass: env('SMTP_PASSWORD'),
-        },
-      },
-      settings: {
-        defaultFrom: env('SMTP_FROM'),
-        defaultReplyTo: env('SMTP_REPLY_TO'),
+ email: {
+  config: {
+    provider: 'nodemailer',
+    providerOptions: {
+      host: env('SMTP_HOST'),
+      port: env.int('SMTP_PORT', 465),
+      secure: true,
+      auth: {
+        user: env('SMTP_USERNAME'),
+        pass: env('SMTP_PASSWORD'),
       },
     },
+    settings: {
+      defaultFrom: env('SMTP_FROM'),
+      defaultReplyTo: env('SMTP_REPLY_TO'),
+    },
   },
+},
 });
 
 export default config;

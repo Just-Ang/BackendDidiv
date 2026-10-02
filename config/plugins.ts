@@ -53,7 +53,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): any => ({
 
   email: {
     config: {
-       provider: 'strapi-provider-email-resend',
+      provider: '@3xweb/strapi-provider-email-resend',
 
       providerOptions: {
         apiKey: env('RESEND_API_KEY'),

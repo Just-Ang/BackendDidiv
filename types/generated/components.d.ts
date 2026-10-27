@@ -28,8 +28,8 @@ export interface ProductSpecsAttribute extends Struct.ComponentSchema {
     displayName: 'attribute';
   };
   attributes: {
-    label: Schema.Attribute.String;
-    value: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -39,8 +39,8 @@ export interface ProductSpecsFeatures extends Struct.ComponentSchema {
     displayName: 'features';
   };
   attributes: {
-    label: Schema.Attribute.String;
-    value: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 

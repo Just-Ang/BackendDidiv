@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attribute_labels",
+  "info": {
+    "singularName": "attribute-label",
+    "pluralName": "attribute-labels",
+    "displayName": "AttributeLabel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}

@@ -22,7 +22,8 @@
       ]
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "category": {
       "type": "relation",
@@ -30,7 +31,8 @@
       "target": "api::category.category"
     },
     "price": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "required": true
     },
     "new_price": {
       "type": "integer"
@@ -39,7 +41,8 @@
       "type": "text"
     },
     "stock": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "attributes": {
       "type": "component",
@@ -81,10 +84,12 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "name",
+      "required": true
     },
     "sku": {
-      "type": "uid"
+      "type": "uid",
+      "required": true
     },
     "sold_date": {
       "type": "datetime"

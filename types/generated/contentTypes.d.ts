@@ -669,19 +669,19 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::product.product'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     new_price: Schema.Attribute.Integer;
     order_item: Schema.Attribute.Relation<
       'oneToOne',
       'api::order-item.order-item'
     >;
-    price: Schema.Attribute.BigInteger;
+    price: Schema.Attribute.BigInteger & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     questions: Schema.Attribute.Relation<'oneToMany', 'api::question.question'>;
-    sku: Schema.Attribute.UID;
-    slug: Schema.Attribute.UID<'name'>;
+    sku: Schema.Attribute.UID & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     sold_date: Schema.Attribute.DateTime;
-    stock: Schema.Attribute.Integer;
+    stock: Schema.Attribute.Integer & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

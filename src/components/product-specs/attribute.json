@@ -6,12 +6,14 @@
   "options": {},
   "attributes": {
     "label": {
-      "type": "string",
-      "required": true
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::attribute-label.attribute-label"
     },
     "value": {
-      "type": "string",
-      "required": true
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::attribute-value.attribute-value"
     }
   },
   "config": {}

@@ -28,8 +28,14 @@ export interface ProductSpecsAttribute extends Struct.ComponentSchema {
     displayName: 'attribute';
   };
   attributes: {
-    label: Schema.Attribute.String & Schema.Attribute.Required;
-    value: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::attribute-label.attribute-label'
+    >;
+    value: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::attribute-value.attribute-value'
+    >;
   };
 }
 

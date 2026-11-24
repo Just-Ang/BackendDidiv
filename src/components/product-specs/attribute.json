@@ -5,14 +5,14 @@
   },
   "options": {},
   "attributes": {
-    "labels": {
+    "label": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::attribute-label.attribute-label"
     },
-    "values": {
+    "value": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::attribute-value.attribute-value"
     }
   },

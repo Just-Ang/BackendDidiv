@@ -13,6 +13,12 @@
   "attributes": {
     "label": {
       "type": "string"
+    },
+    "attribute_value": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::attribute-value.attribute-value",
+      "inversedBy": "attribute_labels"
     }
   }
 }

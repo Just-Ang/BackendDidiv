@@ -16,12 +16,6 @@
     },
     "slug": {
       "type": "uid"
-    },
-    "attribute_values": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::attribute-value.attribute-value",
-      "mappedBy": "attribute"
     }
   }
 }

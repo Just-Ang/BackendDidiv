@@ -19,6 +19,11 @@
       "relation": "manyToOne",
       "target": "api::attribute-value.attribute-value",
       "inversedBy": "attribute_labels"
+    },
+    "attribute_values": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::attribute-value.attribute-value"
     }
   }
 }

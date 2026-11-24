@@ -13,9 +13,6 @@
   "attributes": {
     "label": {
       "type": "string"
-    },
-    "slug": {
-      "type": "uid"
     }
   }
 }

@@ -6,12 +6,12 @@ export interface ProductSpecsAttribute extends Struct.ComponentSchema {
     displayName: 'attribute';
   };
   attributes: {
-    label: Schema.Attribute.Relation<
-      'oneToOne',
+    labels: Schema.Attribute.Relation<
+      'oneToMany',
       'api::attribute-label.attribute-label'
     >;
-    value: Schema.Attribute.Relation<
-      'oneToOne',
+    values: Schema.Attribute.Relation<
+      'oneToMany',
       'api::attribute-value.attribute-value'
     >;
   };

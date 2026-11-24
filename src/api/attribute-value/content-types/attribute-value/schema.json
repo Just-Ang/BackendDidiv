@@ -13,12 +13,6 @@
   "attributes": {
     "value": {
       "type": "string"
-    },
-    "attribute_labels": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::attribute-label.attribute-label",
-      "mappedBy": "attribute_value"
     }
   }
 }

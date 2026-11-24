@@ -14,13 +14,7 @@
     "label": {
       "type": "string"
     },
-    "attribute_value": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::attribute-value.attribute-value",
-      "inversedBy": "attribute_labels"
-    },
-    "attribute_values": {
+    "values": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::attribute-value.attribute-value"

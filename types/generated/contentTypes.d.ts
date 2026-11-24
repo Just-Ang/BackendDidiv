@@ -479,10 +479,6 @@ export interface ApiAttributeLabelAttributeLabel
     draftAndPublish: true;
   };
   attributes: {
-    attribute_value: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::attribute-value.attribute-value'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -497,6 +493,10 @@ export interface ApiAttributeLabelAttributeLabel
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    values: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::attribute-value.attribute-value'
+    >;
   };
 }
 
@@ -512,10 +512,6 @@ export interface ApiAttributeValueAttributeValue
     draftAndPublish: true;
   };
   attributes: {
-    attribute_labels: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::attribute-label.attribute-label'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

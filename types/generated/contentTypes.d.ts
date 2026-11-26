@@ -715,6 +715,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::cart-item.cart-item'
     >;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    condition: Schema.Attribute.Enumeration<
+      ['\u041D\u043E\u0432\u0438\u0439', '\u0411/\u0443']
+    > &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

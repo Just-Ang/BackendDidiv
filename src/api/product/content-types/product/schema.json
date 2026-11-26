@@ -93,6 +93,14 @@
     },
     "sold_date": {
       "type": "datetime"
+    },
+    "condition": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Новий",
+        "Б/у"
+      ]
     }
   }
 }

@@ -22,16 +22,7 @@ export interface ProductSpecsFeatures extends Struct.ComponentSchema {
   info: {
     displayName: 'features';
   };
-  attributes: {
-    label: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::features-label.features-label'
-    >;
-    value: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::features-value.features-value'
-    >;
-  };
+  attributes: {};
 }
 
 declare module '@strapi/strapi' {

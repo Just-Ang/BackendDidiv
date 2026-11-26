@@ -4,17 +4,6 @@
     "displayName": "features"
   },
   "options": {},
-  "attributes": {
-    "label": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::features-label.features-label"
-    },
-    "value": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::features-value.features-value"
-    }
-  },
+  "attributes": {},
   "config": {}
 }

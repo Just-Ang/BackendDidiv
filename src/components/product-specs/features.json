@@ -8,12 +8,12 @@
     "label": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::attribute-label.attribute-label"
+      "target": "api::features-label.features-label"
     },
     "value": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::attribute-value.attribute-value"
+      "target": "api::features-value.features-value"
     }
   },
   "config": {}

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "features_labels",
+  "info": {
+    "singularName": "features-label",
+    "pluralName": "features-labels",
+    "displayName": "FeaturesLabel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "features_values": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::features-value.features-value"
+    }
+  }
+}

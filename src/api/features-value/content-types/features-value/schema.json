@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "features_values",
+  "info": {
+    "singularName": "features-value",
+    "pluralName": "features-values",
+    "displayName": "FeaturesValue"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}

@@ -25,11 +25,11 @@ export interface ProductSpecsFeatures extends Struct.ComponentSchema {
   attributes: {
     label: Schema.Attribute.Relation<
       'oneToOne',
-      'api::attribute-label.attribute-label'
+      'api::features-label.features-label'
     >;
     value: Schema.Attribute.Relation<
       'oneToOne',
-      'api::attribute-value.attribute-value'
+      'api::features-value.features-value'
     >;
   };
 }

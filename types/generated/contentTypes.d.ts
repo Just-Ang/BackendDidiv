@@ -623,6 +623,68 @@ export interface ApiFavoriteFavorite extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFeaturesLabelFeaturesLabel
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'features_labels';
+  info: {
+    displayName: 'FeaturesLabel';
+    pluralName: 'features-labels';
+    singularName: 'features-label';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    features_values: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::features-value.features-value'
+    >;
+    label: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::features-label.features-label'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFeaturesValueFeaturesValue
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'features_values';
+  info: {
+    displayName: 'FeaturesValue';
+    pluralName: 'features-values';
+    singularName: 'features-value';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::features-value.features-value'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface ApiOrderItemOrderItem extends Struct.CollectionTypeSchema {
   collectionName: 'order_items';
   info: {
@@ -1351,6 +1413,8 @@ declare module '@strapi/strapi' {
       'api::cart-item.cart-item': ApiCartItemCartItem;
       'api::category.category': ApiCategoryCategory;
       'api::favorite.favorite': ApiFavoriteFavorite;
+      'api::features-label.features-label': ApiFeaturesLabelFeaturesLabel;
+      'api::features-value.features-value': ApiFeaturesValueFeaturesValue;
       'api::order-item.order-item': ApiOrderItemOrderItem;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;

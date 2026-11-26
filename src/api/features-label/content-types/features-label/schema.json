@@ -18,6 +18,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::features-value.features-value"
+    },
+    "uid": {
+      "type": "uid"
     }
   }
 }

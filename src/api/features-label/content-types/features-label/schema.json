@@ -14,7 +14,7 @@
     "label": {
       "type": "string"
     },
-    "features_values": {
+    "values": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::features-value.features-value"

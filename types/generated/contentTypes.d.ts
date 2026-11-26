@@ -638,10 +638,6 @@ export interface ApiFeaturesLabelFeaturesLabel
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    features_values: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::features-value.features-value'
-    >;
     label: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -653,6 +649,10 @@ export interface ApiFeaturesLabelFeaturesLabel
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    values: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::features-value.features-value'
+    >;
   };
 }
 
